@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="Style/style.css">
 </head>
 <body>
-    <input type="text" name="" id="change" onkeyup="change();" class="border-2 m-4 rounded">
-    <div class="w-full h-screen overflow-none flex justify-center items-center">
-        <div class="w-11/12 h-5/6 md:w-2/3 lg:w-5/12 bg-gray-300 rounded-md shadow-xl p-2">
+    <!-- <input type="text" name="" id="change" onkeyup="change();" class="border-2 m-4 rounded"> -->
+    <div class="w-full my-4 overflow-none flex justify-center items-center">
+        <div class="w-11/12 h-5/6 md:w-2/3 lg:w-5/12 bg-gray-300 rounded-md shadow-xl p-1">
             <!-- This is the number display area. -->
-            <div class="num-display rounded-md w-full my-1 p-2 bg-gray-100 h-20 shadow-inner relative">
+            <div class="num-display rounded-md w-full my-1 p-2 bg-gray-100 h-20 shadow-inner-deep relative">
                 <div class="absolute bottom-0 right-0 m-2">
                     <span class="digits text-2xl text-gray-500">
                         Dummy Text
@@ -19,26 +19,138 @@
                 </div>
             </div>
             <!-- The number buttons are below. -->
-            <div class="rounded-md w-full my-2 p-2 shadow-inner relative">
-                <div class="button-row flex flex-row justify-between">
-                    <div>
-                        <button class="rounded text-2xl clear-btn bg-gray-100 p-2" onclick="arithmetic(this);">
+            <div class="rounded-md w-full mt-2 mb-4 p-2 shadow-inner relative flex flex-col justify-between">
+                <div class="button-row flex flex-row justify-between mt-2 mb-4">
+                    <div class="w-1/4 text-center">
+                        <button class="rounded text-2xl clear-btn bg-gray-100 w-5/6 py-2 shadow-outer hover:bg-gray-200 transistion hover:text-gray-900" onclick="arithmetic(this);">
                             C
                         </button>
                     </div>
-                    <div>
-                        <button class="rounded text-2xl l-bracket-btn bg-gray-100 p-2" onclick="arithmetic(this);">
+                    <div class="w-1/4 text-center">
+                        <button class="rounded text-2xl l-bracket-btn bg-gray-100 w-5/6 py-2 shadow-outer hover:bg-gray-200 transistion hover:text-gray-900" onclick="arithmetic(this);">
                             (
                         </button>
                     </div>
-                    <div>
-                        <button class="rounded text-2xl r-bracket-btn bg-gray-100 p-2" onclick="arithmetic(this);">
+                    <div class="w-1/4 text-center">
+                        <button class="rounded text-2xl r-bracket-btn bg-gray-100 w-5/6 py-2 shadow-outer hover:bg-gray-200 transistion hover:text-gray-900" onclick="arithmetic(this);">
                             )
                         </button>
                     </div>
-                    <div>
-                        <button class="rounded text-2xl multiplication-btn bg-gray-100 p-2" onclick="arithmetic(this);">
+                    <div class="w-1/4 text-center">
+                        <button class="rounded text-2xl multiplication-btn bg-gray-100 w-5/6 py-2 shadow-outer hover:bg-gray-200 transistion hover:text-gray-900" onclick="arithmetic(this);">
                             x
+                        </button>
+                    </div>
+                </div>
+                <div class="button-row flex flex-row justify-between mt-2 mb-4">
+                    <div class="w-1/4 text-center">
+                        <button class="rounded text-2xl text-center root-btn bg-gray-100 w-5/6 py-2 shadow-outer hover:bg-gray-200 transistion hover:text-gray-900" onclick="arithmetic(this);">
+                            √x
+                        </button>
+                    </div>
+                    <div class="w-1/4 text-center">
+                        <button class="rounded text-2xl text-center percent-btn bg-gray-100 w-5/6 py-2 shadow-outer hover:bg-gray-200 transistion hover:text-gray-900" onclick="arithmetic(this);">
+                            %
+                        </button>
+                    </div>
+                    <div class="w-1/4 text-center">
+                        <button class="rounded text-2xl text-center square-btn bg-gray-100 w-5/6 py-2 shadow-outer hover:bg-gray-200 transistion hover:text-gray-900" onclick="arithmetic(this);">
+                            <span>
+                                x<sup>2</sup>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="w-1/4 text-center">
+                        <button class="rounded text-2xl text-center divide-btn bg-gray-100 w-5/6 py-2 shadow-outer hover:bg-gray-200 transistion hover:text-gray-900" onclick="arithmetic(this);">
+                            ÷
+                        </button>
+                    </div>
+                </div>
+                <div class="button-row flex flex-row justify-between  mt-2 mb-4">
+                    <div class="w-1/4 text-center">
+                        <button class="rounded text-2xl text-center seven-btn bg-gray-100 w-5/6 py-2 shadow-outer hover:bg-gray-200 transistion hover:text-gray-900" onclick="arithmetic(this);">
+                            7
+                        </button>
+                    </div>
+                    <div class="w-1/4 text-center">
+                        <button class="rounded text-2xl text-center eight-btn bg-gray-100 w-5/6 py-2 shadow-outer hover:bg-gray-200 transistion hover:text-gray-900" onclick="arithmetic(this);">
+                            8
+                        </button>
+                    </div>
+                    <div class="w-1/4 text-center">
+                        <button class="rounded text-2xl text-center nine-btn bg-gray-100 w-5/6 py-2 shadow-outer hover:bg-gray-200 transistion hover:text-gray-900" onclick="arithmetic(this);">
+                            9
+                        </button>
+                    </div>
+                    <div class="w-1/4 text-center">
+                        <button class="rounded text-2xl text-center addition-btn bg-gray-100 w-5/6 py-2 shadow-outer hover:bg-gray-200 transistion hover:text-gray-900" onclick="arithmetic(this);">
+                            +
+                        </button>
+                    </div>
+                </div>
+                <div class="button-row flex flex-row justify-between  mt-2 mb-4">
+                    <div class="w-1/4 text-center">
+                        <button class="rounded text-2xl text-center four-btn bg-gray-100 w-5/6 py-2 shadow-outer hover:bg-gray-200 transistion hover:text-gray-900" onclick="arithmetic(this);">
+                            4
+                        </button>
+                    </div>
+                    <div class="w-1/4 text-center">
+                        <button class="rounded text-2xl text-center five-btn bg-gray-100 w-5/6 py-2 shadow-outer hover:bg-gray-200 transistion hover:text-gray-900" onclick="arithmetic(this);">
+                            5
+                        </button>
+                    </div>
+                    <div class="w-1/4 text-center">
+                        <button class="rounded text-2xl text-center six-btn bg-gray-100 w-5/6 py-2 shadow-outer hover:bg-gray-200 transistion hover:text-gray-900" onclick="arithmetic(this);">
+                            6
+                        </button>
+                    </div>
+                    <div class="w-1/4 text-center">
+                        <button class="rounded text-2xl text-center subtraction-btn bg-gray-100 w-5/6 py-2 shadow-outer hover:bg-gray-200 transistion hover:text-gray-900" onclick="arithmetic(this);">
+                            -
+                        </button>
+                    </div>
+                </div>
+                <!-- Below is a container for the last 2 rows and the equals sign that occupies 2 cells -->
+                <div class="flex flex-row w-full">
+                    <div class="number-row flex flex-col w-5/6">
+                        <div class="button-row flex flex-row justify-between  mt-2 mb-4">
+                            <div class="w-1/3 text-center">
+                                <button class="rounded text-2xl text-center seven-btn bg-gray-100 w-5/6 py-2 shadow-outer hover:bg-gray-200 transistion hover:text-gray-900" onclick="arithmetic(this);">
+                                    7
+                                </button>
+                            </div>
+                            <div class="w-1/3 text-center">
+                                <button class="rounded text-2xl text-center eight-btn bg-gray-100 w-5/6 py-2 shadow-outer hover:bg-gray-200 transistion hover:text-gray-900" onclick="arithmetic(this);">
+                                    8
+                                </button>
+                            </div>
+                            <div class="w-1/3 text-center">
+                                <button class="rounded text-2xl text-center nine-btn bg-gray-100 w-5/6 py-2 shadow-outer hover:bg-gray-200 transistion hover:text-gray-900" onclick="arithmetic(this);">
+                                    9
+                                </button>
+                            </div>
+                        </div>
+                        <div class="button-row flex flex-row justify-between  mt-2 mb-4">
+                            <div class="w-1/3 text-center">
+                                <button class="rounded text-2xl text-center seven-btn bg-gray-100 w-5/6 py-2 shadow-outer hover:bg-gray-200 transistion hover:text-gray-900" onclick="arithmetic(this);">
+                                    7
+                                </button>
+                            </div>
+                            <div class="w-1/3 text-center">
+                                <button class="rounded text-2xl text-center eight-btn bg-gray-100 w-5/6 py-2 shadow-outer hover:bg-gray-200 transistion hover:text-gray-900" onclick="arithmetic(this);">
+                                    8
+                                </button>
+                            </div>
+                            <div class="w-1/3 text-center">
+                                <button class="rounded text-2xl text-center nine-btn bg-gray-100 w-5/6 py-2 shadow-outer hover:bg-gray-200 transistion hover:text-gray-900" onclick="arithmetic(this);">
+                                    9
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-1/6 py-2">
+                        <button class="rounded text-2xl text-center equal-btn bg-gray-100 w-5/6 shadow-outer hover:bg-gray-200 transistion hover:text-gray-900 h-5/6">
+                            =
                         </button>
                     </div>
                 </div>
