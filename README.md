@@ -1,2 +1,2 @@
 # CalculatorApp
-Creating a calculator app in js, tailwind css and HTML.
+Creating a calculator app in Vanilla JS, Tailwind css and HTML.
