@@ -7,13 +7,23 @@ const previousOperand = document.querySelector(".previous-operand");
         }
         operation(operator){
             this.operator = operator;
+            console.log(this.operator);
         }
         appendNumber(number){
-            
+            if(this.currentOperand.innerHTML.includes(".") && number === ".")return;
+            this.currentOperand.innerHTML+=number;
         }
     }
-    function clear(){
+    function clearAll(){
         currentOperand.innerHTML = "";
+        previousOperand.innerHTML = "";
+    }
+    function erase(){
+        var temp ="";
+        for (var i = 0; i < (currentOperand.innerHTML).length-1; i++) {
+            temp += currentOperand.innerHTML[i];
+        }
+        currentOperand.innerHTML = temp;
     }
     function arithmetic(button){
 
@@ -27,25 +37,21 @@ const previousOperand = document.querySelector(".previous-operand");
             currentOperand.innerHTML = currentOperand.innerHTML+")";
             temp = currentOperand.innerHTML;
         }
-        else if(button.classList.contains("multiplication-btn")){
-            
-            currentOperand.innerHTML = currentOperand.innerHTML+"*";
-            temp = current-operand.innerHTML;
-        }
         else if(button.classList.contains("erase-btn")){
-            for (var i = 0; i < (currentOperand.innerHTML).length-1; i++) {
-                temp += currentOperand.innerHTML[i];
-            }
-            currentOperand.innerHTML = temp;
+            
+            
         }
     }
+    const calculator = new Calculator(previousOperand,currentOperand);
     const numbers = document.querySelectorAll(".number-btn");
     numbers.forEach(number=>{
         number.addEventListener("click", (num)=>{
-            console.log(num.currentTarget.innerHTML.trim());
+            calculator.appendNumber(number.innerHTML.trim());
         });
     });
-    const operations = document.querySelectorAll(".operation-btn");
-    operations.forEach(operation=>{
-        console.log(operation.innerHTML.trim());
+    const operators = document.querySelectorAll(".operation-btn");
+    operators.forEach(operator=>{
+        operator.addEventListener("click",()=>{
+            calculator.operation(operator.innerHTML.trim());
+        });
     });
