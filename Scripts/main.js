@@ -17,6 +17,7 @@ const previousOperand = document.querySelector(".previous-operand");
     function clearAll(){
         currentOperand.innerHTML = "";
         previousOperand.innerHTML = "";
+        //
     }
     function erase(){
         var temp ="";
